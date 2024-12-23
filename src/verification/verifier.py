@@ -1,4 +1,3 @@
-
 from ..crypto.zkp import ZKProof
 import json
 

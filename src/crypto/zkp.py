@@ -1,3 +1,4 @@
+# src/crypto/zkp.py
 
 from Crypto.PublicKey import RSA
 from Crypto.Signature import pkcs1_15
@@ -5,6 +6,7 @@ from Crypto.Hash import SHA256
 import json
 import torch
 import numpy as np
+from torch.utils.data import DataLoader
 
 class ZKProof:
     def __init__(self):
@@ -12,27 +14,37 @@ class ZKProof:
         self.key = RSA.generate(2048)
         self.public_key = self.key.publickey()
     
-    def create_proof_data(self, model, test_data, test_labels, claimed_accuracy):
+    def create_proof_data(self, model, test_loader, claimed_accuracy):
         """Create the proof data structure"""
-        from ..models.model_utils import evaluate_model
-        from ..crypto.commitment import ModelCommitment
+        # Evaluate model
+        model.eval()
+        correct = 0
+        total = 0
+        
+        with torch.no_grad():
+            for inputs, labels in test_loader:
+                outputs = model(inputs)
+                _, predicted = torch.max(outputs.data, 1)
+                total += labels.size(0)
+                correct += (predicted == labels).sum().item()
+        
+        actual_accuracy = correct / total if total > 0 else 0
         
         # Get model parameters
-        model_params = {name: param.detach().clone() 
-                       for name, param in model.named_parameters()}
+        params = {}
+        for name, param in model.named_parameters():
+            params[name] = param.detach().cpu()
         
         # Create model commitment
-        commitment = ModelCommitment.create_commitment(model_params)
-        
-        # Evaluate model
-        actual_accuracy = evaluate_model(model, test_data)
+        from .commitment import ModelCommitment
+        commitment = ModelCommitment.create_commitment(params)
         
         # Create proof structure
         proof_data = {
             "model_commitment": commitment,
             "claimed_accuracy": float(claimed_accuracy),
             "actual_accuracy": float(actual_accuracy),
-            "test_set_size": len(test_labels),
+            "test_set_size": total,
             "timestamp": np.datetime64('now').astype(str)
         }
         

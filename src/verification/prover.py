@@ -1,6 +1,5 @@
-import torch
 from ..crypto.zkp import ZKProof
-from ..crypto.commitment import ModelCommitment
+from torch.utils.data import DataLoader
 
 class ModelProver:
     def __init__(self):
@@ -10,7 +9,9 @@ class ModelProver:
         """Create a proof of model performance"""
         # Create proof data
         proof_data = self.zkp.create_proof_data(
-            model, test_loader, claimed_accuracy
+            model=model,
+            test_loader=test_loader,
+            claimed_accuracy=claimed_accuracy
         )
         
         # Sign the proof

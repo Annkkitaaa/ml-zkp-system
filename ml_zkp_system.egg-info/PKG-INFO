@@ -1,0 +1,10 @@
+Metadata-Version: 2.1
+Name: ml-zkp-system
+Version: 0.1
+Requires-Dist: torch>=2.0.0
+Requires-Dist: numpy>=1.21.0
+Requires-Dist: pycryptodome>=3.15.0
+Requires-Dist: pytest>=7.0.0
+Requires-Dist: tqdm>=4.65.0
+Requires-Dist: matplotlib>=3.5.0
+Requires-Dist: scikit-learn>=1.0.0

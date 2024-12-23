@@ -1,0 +1,11 @@
+{
+  "proof_data": {
+    "model_commitment": "e2dda6456cd4417016d6d1074c7d5a5f8b6b1adf30d2c123986f87f969a18ea3",
+    "claimed_accuracy": 0.41,
+    "actual_accuracy": 0.41,
+    "test_set_size": 200,
+    "timestamp": "2024-12-23T12:39:13"
+  },
+  "signature": "14dddb01ea2d7e11c6c8ef0765f016690b5f44eafcd85de3a75690ce3de02c9488d6ed24a88559ff4769f2dd24a7dc0eecdbfe484720023ffb880c174d44271442c74a4e9b5e0b6b910af5da807ce33ca24fd7fd58ef2adfecbc2b19af31009d9a835f09b491ede22dca2ba1c48149df834dd23b1c6247ac5ca5582c58d67555d86fc2dd7275b037aeee7bbe5cf79aab8c612bbb5fb9ae5a93732437dfdc8de8adf641b4a7ae3d5bb259d67943b27cadc08d965decaddf46c0771c30e445445514e15b7fe65a04b900cd371d173d29315c93143d2aa72dbeeb800dff19cd450e25ed22967eded26a8c9b096c487d3779be991a66957259eb8bcbbf4cf788ff75",
+  "public_key": "-----BEGIN PUBLIC KEY-----\nMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAmooJkcbM699Mny5xwIKR\nF+CFIzmNGh4rdxCcpEJ/ZyrYqH7K5+FoByr37ajTH7+9bQSULNtrV4rgjzGTHlC0\n9W3y/ygC6zBG57iWyDAZSQw46hkm4ej9LoN64Gbklu/lPW3HbxxGbKzxWzdlTHtz\ntqf18g1fsfaM7jdAtFksFgxNKhHOFnnX9XyEtppzSeQHkjJ+B40dkWbmkIxx12o6\nPRKINbG9nYNWrKhlEKNcobhfKBGibAR2I+4PdL7SXK11p7SOElSnsJGpueK21fM9\n4Yq97cxC7o1gIlE9SYtL5X1sROWY3YMReMdE0Pfj+RZauHFFw6MHs3r3LERUBaL4\n0QIDAQAB\n-----END PUBLIC KEY-----"
+}
