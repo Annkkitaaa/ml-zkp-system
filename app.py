@@ -144,7 +144,7 @@ def load_proof(proof_path):
 
 def main():
     # Header
-    st.title("🔒 Privacy-Preserving ML Model Verification System")
+    st.title("Privacy-Preserving ML Model Verification System")
     
     # About This Project section
     st.header("About This Project")
