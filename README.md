@@ -43,7 +43,7 @@ ml-zkp-system/
 
 1. Clone the repository:
 ```bash
-git clone https://github.com/yourusername/ml-zkp-system.git
+git clone https://github.com/Annkkitaaa/ml-zkp-system.git
 cd ml-zkp-system
 ```
 
